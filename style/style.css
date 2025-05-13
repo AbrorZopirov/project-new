@@ -103,6 +103,4 @@ body {
   
   .nav_btn_2:hover {
     background-color: #fff;
-    color: var(--color-primary-2);
-    border: 1.7px solid var(--color-primary-2);
   }
