@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- style file import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -28,21 +33,113 @@
         </nav>
     </header>
     <main>
-        <section class="video-section">
-            <div class="content">
+        <section class="video-section" id="header">
+            <div class="content1">
                 <p class="advice-text">Practice Advice</p>
                 <h1 class="title">Video in Live Action</h1>
                 <p class="subtitle">
                     Problems trying to resolve the conflict between <br />
                     the two major realms of classical physics: Newtonian mechanics
                 </p>
-                <div class="video-thumbnail">
-                    <img src="./img/f01b9d2950ad36675f415be6943033d61eece111.jpg" alt="Video Thumbnail" />
-                    <div class="play-button">&#9658;</div>
+
+                <div class="video-wrapper">
+                    <video id="mainVideo" width="100%" height="100%" preload="metadata">
+                        <source src="./video/6209572-uhd_4096_2160_25fps.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="custom-play-button" id="playBtn" onclick="playCustomVideo()">▶</div>
+                    <div class="background1">
+
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section class="client-section">
+            <h6 class="section-title">Practice Advice</h6>
+            <div class="section-heading">Every Client Matters</div>
+            <div class="section-subtext">
+                Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian
+                mechanics
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="icon-circle"><img src="./img/011-book-of-black-cover-closed.png" alt=""></div>
+                    <div class="card-title">Expert instruction</div>
+                    <div class="card-line"></div>
+                    <div class="card-text">The gradual <br> accumulation and <br> small-scale..</div>
+                </div>
+
+                <div class="card">
+                    <div class="icon-circle"><img src="./img/009-backpack-1.png" alt=""></div>
+                    <div class="card-title">Lifetime access</div>
+                    <div class="card-line"></div>
+                    <div class="card-text">The gradual <br> accumulation and <br> small-scale..</div>
+                </div>
+                 <div class="card">
+                    <div class="icon-circle"><img src="./img/009-backpack-1.png" alt=""></div>
+                    <div class="card-title">Lifetime access</div>
+                    <div class="card-line"></div>
+                    <div class="card-text">The gradual <br> accumulation and <br> small-scale..</div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="packages-section">
+            <div class="content">
+                <div class="text">
+                    <div class="highlight-line"></div>
+                    <h2 class="h2">Approachable Packages</h2>
+                    <p class="p">
+                        Problems trying to resolve the conflict between <br> the two major realms of Classical physics:
+                        <br>
+                        Newtonian mechanics
+                    </p>
+                    <a href="#" class="learn-more">Learn More <span><img src="./img/@none.png" alt=""></span></a>
+
+                    <div id="extra-info" style="display: none; margin-top: -30px; color: white; font-size: 18px; width: 400px; transition: all 1.1s ease-in-out;">
+                        Problems trying to resolve the conflict <br> between
+                        the two major realms of Classical <br> physics:
+                        Newtonian mechanics Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, ratione
+                        ut! Porro optio illum explicabo quidem dolorem non adipisci, sequi provident, ipsa numquam id
+                        blanditiis odit deleniti commodi quod! Unde.
+                    </div>
+
+                </div>
+                <div class="image-wrapper">
+                    <img src="./img/col-md-6.png" alt="Student" />
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <script>
+        const video = document.getElementById('mainVideo');
+        const playBtn = document.getElementById('playBtn');
+
+        function playCustomVideo() {
+            video.play();
+            playBtn.style.display = 'none';
+        }
+        video.addEventListener('ended', function () {
+            playBtn.style.display = 'flex';
+        });
+
+
+        document.querySelector('.learn-more').addEventListener('click', function (e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('extra-info').style.display = 'block';
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
